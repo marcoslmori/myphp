@@ -1,4 +1,5 @@
 <! capitulo 3 pag 19 !>
+<!teste de git>
 <table  border="1">
 	<tr>
 		<th>Dom</th>
