@@ -1,22 +1,40 @@
-<! capitulo 3 pag 19 !>
-<!Lendo pelo kindle posição 403 >
-	
+<!mensagem de erro - a pagina de myphp nao está funcionando !>
+<!posição 417-477 kindle !>
+
 <?php
-                Function linha()
-        {
+
+        function linha($semana)
+	{
                 echo "
                         <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
+                        <td>{$semana[0]}</td>
+                        <td>{$semana[1]}</td>
+                        <td>{$semana[2]}</td>
+                        <td>{$semana[3]}</td>
+                        <td>{$semana[4]}</td>
+                        <td>{$semana[5]}</td>
+                        <td>{$semana[6]}</td>
                         </tr>
                 ";
-        }
-        ?>
+        
+	}
+
+
+	function calendario()
+	{
+		$dia = 1;
+		$semana = array();
+		while  ($dia <= 31) {
+			array_push($semana, $dia);
+			
+				if (count($semana) == 7) {
+					linha($semana);
+					semana = array();
+				}
+				$dia++;
+		}
+	}	
+ ?>
 
 
 <table  border="1">
@@ -29,9 +47,5 @@
                 <th>Sex</th>
                 <th>Sab</th>
 	</tr>
-	<?php linha(); ?>
-        <?php linha(); ?>
-        <?php linha(); ?>
-        <?php linha(); ?>
-        <?php linha(); ?>
+	<?php calendario();  ?>
 </table>
